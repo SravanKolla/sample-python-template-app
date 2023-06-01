@@ -8,11 +8,21 @@
 
       <table border = 1>
          {% for key, value in result.items() %}
-
+          {% if key != "submit" %}
             <tr>
-               <th> {{ key }} </th>
-               <td> {{ value }} </td>
+                {% if key == "name" %}
+                    <th>Employee Name </th>
+                {% elif key == "designation" %}
+                    <th>Designation </th>
+                {% elif key == "role" %}
+                    <th>Role </th>
+                {% elif key == "experience" %}
+                <th> Experience </th>
+                {% endif %}
+
+                <td> {{ value }} </td>
             </tr>
+          {% endif %}
 
          {% endfor %}
       </table>

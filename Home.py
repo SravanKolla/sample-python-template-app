@@ -1,11 +1,15 @@
 from flask import Flask, render_template, request
 
+from form import EmployeeForm
+
 app = Flask(__name__, template_folder='templates')
+app.config['SECRET_KEY'] = 'LongAndRandomSecretKey'
 
 
 @app.route('/')
 def home():
-    return render_template('Home Page.html')
+    form = EmployeeForm()
+    return render_template('Home Page.html', form=form)
 
 
 @app.route('/result', methods=['POST', 'GET'])

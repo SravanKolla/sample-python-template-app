@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
@@ -7,11 +7,17 @@
 <body>
 
 	<form action = "/result" method = "POST">
-		<p>Employee Name <input type = "text" name = "Employee Name" /></p>
-		<p>Designation <input type = "text" name = "Designation" /></p>
-		<p>Role <input type = "text" name = "Role" /></p>
-		<p>Experience <input type ="text" name = "Experience" /></p>
-		<p><input type = "Submit" value = "Submit" /></p>
+		<div class="form-row">
+        	<div class="form-group col-md-6">
+				<p>Employee Name {{form.name}}</p>
+				<p>Designation {{form.designation}}</p>
+				<p>Role {{form.role}}</p>
+				<p>Experience(in years) {{form.experience}}</p>
+			</div>
+        	<div class="form-group">
+            	{{ form.submit(class="btn btn-primary")}}
+        	</div>
+    	</div>
 	</form>
 </body>
 </html>

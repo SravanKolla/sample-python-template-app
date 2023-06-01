@@ -6,5 +6,4 @@ RUN pip install flask
 RUN pip install flask flask-wtf
 RUN pip install flask-mysql
 ADD . /opt
-EXPOSE 5000
 ENTRYPOINT FLASK_APP=/opt/Home.py flask run --host=0.0.0.0

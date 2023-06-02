@@ -5,11 +5,13 @@ from form import EmployeeForm
 app = Flask(__name__, template_folder='templates')
 app.config['SECRET_KEY'] = 'LongAndRandomSecretKey'
 
+color="red"
 
 @app.route('/')
 def home():
     form = EmployeeForm()
-    return render_template('Home Page.html', form=form, color="red")
+    print(color)
+    return render_template('Home Page.html', form=form, color=color)
 
 
 @app.route('/result', methods=['POST', 'GET'])

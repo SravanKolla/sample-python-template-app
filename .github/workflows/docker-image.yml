@@ -31,6 +31,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Remove existing Container and Image and run latest image from docker hub
+      - uses: actions/checkout@v1
       - run : docker stop pythonapp
       - run : docker rm pythonapp
       - run : docker rmi sravankolla/my-sample-python-template-app

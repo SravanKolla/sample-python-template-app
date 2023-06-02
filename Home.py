@@ -9,8 +9,7 @@ color="red"
 
 @app.route('/')
 def home():
-    form = EmployeeForm()
-    print(color)
+    form = EmployeeForm()    
     return render_template('Home Page.html', form=form, color=color)
 
 

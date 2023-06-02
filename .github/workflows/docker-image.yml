@@ -28,6 +28,7 @@ jobs:
           tags: sravankolla/my-sample-python-template-app:latest
           
   deploy:
+    needs: build
     runs-on: self-hosted
     steps:
       - name: Remove existing Container and Image and run latest image from docker hub

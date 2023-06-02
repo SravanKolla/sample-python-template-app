@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = 'LongAndRandomSecretKey'
 @app.route('/')
 def home():
     form = EmployeeForm()
-    return render_template('Home Page.html', form=form)
+    return render_template('Home Page.html', form=form, color="red")
 
 
 @app.route('/result', methods=['POST', 'GET'])
